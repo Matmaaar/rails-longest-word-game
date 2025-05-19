@@ -23,13 +23,14 @@ attempt_serialized = URI.parse(url).read
 api = JSON.parse(attempt_serialized)
 @english_valid = api["found"]
 @score = 0
+
 @result = "Your word can't be built with the given letters"
-      if @grid_valid && @english_valid
-        @result = "Congratulation!"
-        @score = @answer.length
-      elsif @grid_valid
-        @result =  "This is not an english word"
-      end
+  if @grid_valid && @english_valid
+     @result = "Congratulation!"
+     @score = @answer.length
+  elsif @grid_valid
+     @result =  "This is not an english word"
+  end
 
 end
 
